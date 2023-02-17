@@ -20,14 +20,24 @@ class Window1:
         self.LabelTitile = Label(self.frame,text='Pharmacy Management System',font=('arial',50,'bold'),bd=20)
         self.LabelTitile.grid(row=0,column=0,columnspan=40,pady=40)
 
-        self.LoginFrame = LabelFrame(self.frame,width=1010,height=600,font=('arial',20,'bold'),relief='ridge')
-        self.LoginFrame.grid(row=1,column=0)
+        self.LoginFrame1 = LabelFrame(self.frame,width=1010,height=600,font=('arial',20,'bold'),relief='ridge')
+        self.LoginFrame1.grid(row=1,column=0)
 
         self.LoginFrame2 = LabelFrame(self.frame, width=1010, height=600, font=('arial', 20, 'bold'), relief='ridge')
         self.LoginFrame2.grid(row=2, column=0)
 
         self.LoginFrame3 = LabelFrame(self.frame, width=1010, height=600, font=('arial', 20, 'bold'), relief='ridge')
         self.LoginFrame3.grid(row=3, column=0,pady=2)
+
+        #=============================================================================================================#
+
+        self.lblUserName = Label(self.LoginFrame1, text='Username', font=('arial', 30, 'bold'), bd=20)
+        self.lblUserName.grid(row=0, column=0, columnspan=40, pady=40)
+
+        self.lblPassword = Label(self.LoginFrame1, text='Password', font=('arial', 30, 'bold'), bd=20)
+        self.lblPassword.grid(row=0, column=0, columnspan=40, pady=40)
+
+        #===========================================================================================================================#
 
         self.btnLogin = Button(self.LoginFrame2, text="Login",width=20,font=('arial',20,'bold'), command=self.Registration_window)
         self.btnLogin.grid(row=0, column=0)
@@ -38,10 +48,12 @@ class Window1:
         self.btnExit = Button(self.LoginFrame2, text="Exit", command=self.Hospital_window)
         self.btnExit.grid(row=0, column=2)
 
-        self.btnRegistration = Button(self.frame,text = "Patient's Registration",command=self.Registration_window)
+        #============================================================================================================================#
+
+        self.btnRegistration = Button(self.frame,text = "Patient's Registration",state=DISABLED,command=self.Registration_window)
         self.btnRegistration.grid(row=0,column=0)
 
-        self.btnHospital = Button(self.frame, text="Hospital Management", command=self.Hospital_window)
+        self.btnHospital = Button(self.frame, text="Hospital Management", state=DISABLED,command=self.Hospital_window)
         self.btnHospital.grid(row=0, column=1)
 
     def Registration_window(self):
